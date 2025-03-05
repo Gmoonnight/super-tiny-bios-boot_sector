@@ -1,0 +1,4 @@
+# Recursively ignore all hidden folders and files.
+.*
+# This file cannot be ignored.
+!.gitignore
