@@ -7,30 +7,22 @@ LDFLAGS = -nostdlib -m elf_x86_64
 SRC_DIR := src
 BUILD_DIR := .build
 TMP_DIR := .tmp
+DEBUG_DIR := debug
 
 BOOT_DIR := $(BUILD_DIR)/boot
-
 TARGETS := $(BOOT_DIR)/boot_sector.bin
-
 IMG := $(BUILD_DIR)/boot_sector.img
 
 QEMU_PID_FILE := $(TMP_DIR)/qemu.pid
+GDB_COMMANDS_FILE := $(DEBUG_DIR)/gdb_commands.txt
 
 all: $(IMG)
 
 debug: all
 	mkdir -p $(dir $(QEMU_PID_FILE))
 	qemu-system-x86_64 -display sdl -drive file=$(IMG),format=raw -boot c -S -s & \
-		echo $$! > $(QEMU_PID_FILE)
-	gdb $(BUILD_DIR)/boot/boot_sector.elf \
-		-ex "set pagination off" \
-		-ex "set confirm off" \
-		-ex "set osabi none" \
-		-ex "target remote localhost:1234" \
-		-ex "br _start" \
-		-ex "layout src" \
-		-ex "layout regs" \
-		-ex "continue"
+ 		echo $$! > $(QEMU_PID_FILE)
+	gdb -x $(GDB_COMMANDS_FILE)
 	cat $(QEMU_PID_FILE) | xargs kill
 
 clean:

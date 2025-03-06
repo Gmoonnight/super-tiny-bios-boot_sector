@@ -1,0 +1,9 @@
+file .build/boot/boot_sector.elf
+set pagination off
+set confirm off
+set osabi none
+target remote localhost:1234
+br _start
+layout src
+layout regs
+continue

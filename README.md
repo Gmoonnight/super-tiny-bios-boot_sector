@@ -9,7 +9,7 @@
 ```
 $ make -v
 GNU Make 4.4.1
-Built for x86_64-pc-msys
+Built for Windows32
 Copyright (C) 1988-2023 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
@@ -54,3 +54,4 @@ $ make debug
 3. https://lld.llvm.org/
 4. https://stackoverflow.com/questions/33603842/how-to-make-the-kernel-for-my-bootloader
 5. https://github.com/dibingfa/flash-linux0.11-talk
+6. https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows
