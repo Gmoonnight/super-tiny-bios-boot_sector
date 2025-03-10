@@ -9,7 +9,7 @@
 ```
 $ make -v
 GNU Make 4.4.1
-Built for Windows32
+Built for x86_64-w64-mingw32
 Copyright (C) 1988-2023 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
@@ -34,7 +34,7 @@ Copyright (c) 2003-2025 Fabrice Bellard and the QEMU Project developers
 
 ```
 $ gdb -v
-GNU gdb (GDB) 16.2
+GNU gdb (GDB) 15.2
 Copyright (C) 2024 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
